@@ -32,12 +32,28 @@ While usage can be embedded in a larger application, an example flow typically l
 2. Send metric updates; each update is appended to the WAL and reflected in the MemStore.
 3. Restart the process to observe WAL replay restoring in-memory state.
 
+## CLI Usage
+The optional CLI demonstrates ingestion and querying:
+
+```
+./metrics_cli <wal_path> ingest <metric> <timestamp> <value>
+./metrics_cli <wal_path> query <metric> <since_timestamp>
+```
+
+The CLI will replay the WAL on startup before performing the requested command.
+
+## Tests
+Minimal tests live in `tests/` and exercise WAL replay, MetricsStore ingestion/query,
+and MemStore eviction logic.
+
 ## File Structure
 ```
 .
 ├── README.md
-└── src
-    └── (source files)
+├── src
+│   └── (source files)
+└── tests
+    └── (test sources)
 ```
 
 ## API Overview
