@@ -27,15 +27,25 @@ void WriteAheadLog::replay(
     std::string line;
     while (std::getline(in, line))
     {
+        if (line.empty())
+        {
+            continue;
+        }
+
         std::istringstream iss(line);
 
         std::string metricName;
         int64_t timestamp;
         double value;
 
-        iss >> metricName >> timestamp >> value;
-
-        playback(metricName, timestamp, value);
+        if (iss >> metricName >> timestamp >> value)
+        {
+            playback(metricName, timestamp, value);
+        }
+        else
+        {
+            // TODO: Track or log parse failures for WAL replay.
+        }
     }
 }
 
