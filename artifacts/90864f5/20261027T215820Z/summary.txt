@@ -1,0 +1,20 @@
+build-debug: pass
+ctest-debug: pass
+pytest-sil: pass
+build-release: pass
+ctest-release: pass
+build-asan: pass
+ctest-asan: pass
+pytest-sil-asan: pass
+sanitizer-reports: pass
+forced-failure-fails: pass
+vcan-permission-failure: pass
+mutation-check: pass
+demo: pass
+
+test counts (from JUnit XML):
+  ctest-debug.xml: 39 run, 0 failed, 0 skipped
+  ctest-release.xml: 39 run, 0 failed, 0 skipped
+  ctest-asan.xml: 39 run, 0 failed, 0 skipped
+  sil.xml: 42 run, 0 failed, 0 skipped
+  sil-asan.xml: 42 run, 0 failed, 0 skipped

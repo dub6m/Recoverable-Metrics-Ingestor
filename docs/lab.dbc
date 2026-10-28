@@ -1,0 +1,38 @@
+VERSION "1"
+
+
+NS_ :
+
+
+BS_:
+
+BU_: Harness Controller Gateway
+
+
+BO_ 256 LampCommand: 2 Harness
+ SG_ LampRequest : 0|1@1+ (1,0) [0|1] "" Controller
+ SG_ ProtocolVersion : 4|4@1+ (1,0) [1|1] "" Controller
+ SG_ AliveCounter : 8|4@1+ (1,0) [0|15] "" Controller
+
+BO_ 272 VehicleState: 3 Harness
+ SG_ Ignition : 0|1@1+ (1,0) [0|1] "" Controller,Gateway
+ SG_ ProtocolVersion : 4|4@1+ (1,0) [1|1] "" Controller,Gateway
+ SG_ BatteryVoltage : 8|16@1+ (0.01,0) [6|18] "V" Controller,Gateway
+
+BO_ 512 LampState: 2 Controller
+ SG_ LampOn : 0|1@1+ (1,0) [0|1] "" Gateway
+ SG_ FallbackActive : 1|1@1+ (1,0) [0|1] "" Gateway
+ SG_ Mode : 2|2@1+ (1,0) [0|2] "" Gateway
+ SG_ ProtocolVersion : 4|4@1+ (1,0) [1|1] "" Gateway
+ SG_ LastAliveCounter : 8|4@1+ (1,0) [0|15] "" Gateway
+ SG_ AliveValid : 12|1@1+ (1,0) [0|1] "" Gateway
+
+
+
+CM_ BO_ 256 "Lamp request from the test harness. Sent every 100 ms while commands are flowing.";
+CM_ SG_ 256 AliveCounter "Rolling counter. A command is fresh only if this differs from the last accepted command.";
+CM_ BO_ 272 "Vehicle state from the test harness, sent every 100 ms.";
+CM_ BO_ 512 "Lamp state from the controller, sent every 100 ms and whenever the state changes.";
+CM_ SG_ 512 LastAliveCounter "Alive counter of the last accepted command, so traces can match commands to states.";
+CM_ SG_ 512 AliveValid "1 once any command has been accepted since startup.";
+VAL_ 512 Mode 0 "NoCommand" 1 "Normal" 2 "Expired" ;

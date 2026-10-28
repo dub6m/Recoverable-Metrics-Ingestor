@@ -1,0 +1,14 @@
+Internal ctest changing into directory: /home/dub6m.guest/fresh-clone/build
+Test project /home/dub6m.guest/fresh-clone/build
+    Start 39: Harness.FailsWhenForced
+1/1 Test #39: Harness.FailsWhenForced ..........***Failed    0.00 sec
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.00 sec
+
+The following tests FAILED:
+	 39 - Harness.FailsWhenForced (Failed)
+Errors while running CTest
+Output from these tests are in: /home/dub6m.guest/fresh-clone/build/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

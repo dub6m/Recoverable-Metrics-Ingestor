@@ -1,0 +1,20 @@
+commit: 66bc49e2f19da4d9fc881669787beab1041c5506
+uncommitted changes outside artifacts/: 0
+run id: 20261027T221425Z
+kernel: Linux 6.8.0-142-generic aarch64
+os: Ubuntu 24.04.5 LTS
+g++: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+cmake: cmake version 3.28.3
+mosquitto: mosquitto version 2.0.18
+packages:
+  can-utils 2023.03-1
+  libgtest-dev 1.14.0-1
+  libmosquitto-dev 2.0.18-1build3
+  linux-modules-extra-6.8.0-142-generic 6.8.0-142.142
+  nlohmann-json3-dev 3.11.3-1
+python: Python 3.12.3
+  cantools==45.1.1
+  paho-mqtt==2.1.0
+  pytest==9.1.1
+  python-can==4.6.1
+seeds: none. Tests use fixed inputs; run ids and gateway epochs are random per run.

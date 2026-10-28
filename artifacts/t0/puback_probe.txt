@@ -1,0 +1,5 @@
+libmosquitto 2.0.18
+1793136069.828 connected rc=0
+1793136069.828 subscribed qos=1
+1793136070.836 on_message start mid=1 qos=1
+1793136074.840 on_message end

@@ -1,0 +1,16 @@
+# Exact round-trip fixture for the checked store.
+# Each line: a decimal value and the exact double it must come back as, written as a
+# hex float. Generated with Python's float()/float.hex(), independently of the C++ code.
+12.34 0x1.8ae147ae147aep+3
+13.8 0x1.b99999999999ap+3
+0.1 0x1.999999999999ap-4
+0.30000000000000004 0x1.3333333333334p-2
+-273.15 -0x1.1126666666666p+8
+1e-300 0x1.56e1fc2f8f359p-997
+5e-324 0x0.0000000000001p-1022
+1.7976931348623157e308 0x1.fffffffffffffp+1023
+123456.789012345678 0x1.e240c9fcb68cdp+16
+-0.0 -0x0.0p+0
+2.5 0x1.4000000000000p+1
+1234567890123.0625 0x1.1f71fb04cb100p+40
+9.99 0x1.3fae147ae147bp+3

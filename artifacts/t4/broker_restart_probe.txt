@@ -1,0 +1,2 @@
+SIGTERM got ['before', 'during0', 'during1', 'during2', 'during3', 'during4']
+SIGKILL got ['before', 'during0', 'during1', 'during2', 'during3', 'during4']

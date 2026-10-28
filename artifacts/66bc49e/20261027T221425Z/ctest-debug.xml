@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="39"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="0"
+	timestamp="2026-10-27T17:14:25"
+	>
+	<testcase name="MetricsStoreOriginal.WalReplayAndQuery" classname="MetricsStoreOriginal.WalReplayAndQuery" time="0.00346897" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MetricsStoreOriginal.WalReplayAndQuery
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MetricsStoreOriginal
+[ RUN      ] MetricsStoreOriginal.WalReplayAndQuery
+[       OK ] MetricsStoreOriginal.WalReplayAndQuery (1 ms)
+[----------] 1 test from MetricsStoreOriginal (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="MetricsStoreOriginal.MemStoreEviction" classname="MetricsStoreOriginal.MemStoreEviction" time="0.000900737" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MetricsStoreOriginal.MemStoreEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MetricsStoreOriginal
+[ RUN      ] MetricsStoreOriginal.MemStoreEviction
+[       OK ] MetricsStoreOriginal.MemStoreEviction (0 ms)
+[----------] 1 test from MetricsStoreOriginal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart" classname="CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart" time="0.00522726" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart
+[       OK ] CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart (4 ms)
+[----------] 1 test from CheckedStore (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (4 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.RecordLineRoundTripsAllFields" classname="CheckedStore.RecordLineRoundTripsAllFields" time="0.00102321" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.RecordLineRoundTripsAllFields
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.RecordLineRoundTripsAllFields
+[       OK ] CheckedStore.RecordLineRoundTripsAllFields (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.MissingDirectoryAcceptsNothing" classname="CheckedStore.MissingDirectoryAcceptsNothing" time="0.000932631" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.MissingDirectoryAcceptsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.MissingDirectoryAcceptsNothing
+[       OK ] CheckedStore.MissingDirectoryAcceptsNothing (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.FullDiskOnWriteAcceptsNothing" classname="CheckedStore.FullDiskOnWriteAcceptsNothing" time="0.00170959" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.FullDiskOnWriteAcceptsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.FullDiskOnWriteAcceptsNothing
+[       OK ] CheckedStore.FullDiskOnWriteAcceptsNothing (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord" classname="CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord" time="0.00262061" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord
+[       OK ] CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.SyncErrorAcceptsNothingAndStopsWrites" classname="CheckedStore.SyncErrorAcceptsNothingAndStopsWrites" time="0.00163084" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.SyncErrorAcceptsNothingAndStopsWrites
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.SyncErrorAcceptsNothingAndStopsWrites
+[       OK ] CheckedStore.SyncErrorAcceptsNothingAndStopsWrites (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord" classname="CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord" time="0.00212961" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord
+[       OK ] CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends" classname="CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends" time="0.00267947" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends
+[       OK ] CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.TwoCrashRestartCyclesInARowStartCleanly" classname="CheckedStore.TwoCrashRestartCyclesInARowStartCleanly" time="0.0026125" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.TwoCrashRestartCyclesInARowStartCleanly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.TwoCrashRestartCyclesInARowStartCleanly
+[       OK ] CheckedStore.TwoCrashRestartCyclesInARowStartCleanly (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.InteriorCorruptionRefusesStartup" classname="CheckedStore.InteriorCorruptionRefusesStartup" time="0.00228892" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.InteriorCorruptionRefusesStartup
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.InteriorCorruptionRefusesStartup
+[       OK ] CheckedStore.InteriorCorruptionRefusesStartup (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete" classname="CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete" time="0.00198272" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete
+[       OK ] CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.OriginalFormatLogIsRefusedNotMigrated" classname="CheckedStore.OriginalFormatLogIsRefusedNotMigrated" time="0.00122478" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.OriginalFormatLogIsRefusedNotMigrated
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.OriginalFormatLogIsRefusedNotMigrated
+[       OK ] CheckedStore.OriginalFormatLogIsRefusedNotMigrated (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.UnknownLogVersionIsRefused" classname="CheckedStore.UnknownLogVersionIsRefused" time="0.000912231" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.UnknownLogVersionIsRefused
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.UnknownLogVersionIsRefused
+[       OK ] CheckedStore.UnknownLogVersionIsRefused (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog" classname="CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog" time="0.00133714" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog
+[       OK ] CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone" classname="CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone" time="0.00158967" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone
+[       OK ] CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts" classname="CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts" time="0.00153256" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts
+[       OK ] CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.SecondRecoverCallDoesNotReplayAgain" classname="CheckedStore.SecondRecoverCallDoesNotReplayAgain" time="0.00192855" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.SecondRecoverCallDoesNotReplayAgain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.SecondRecoverCallDoesNotReplayAgain
+[       OK ] CheckedStore.SecondRecoverCallDoesNotReplayAgain (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.SecondWriterIsLockedOut" classname="CheckedStore.SecondWriterIsLockedOut" time="0.00143471" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.SecondWriterIsLockedOut
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.SecondWriterIsLockedOut
+[       OK ] CheckedStore.SecondWriterIsLockedOut (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.RejectsNonFiniteValuesAndBadNames" classname="CheckedStore.RejectsNonFiniteValuesAndBadNames" time="0.00131081" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.RejectsNonFiniteValuesAndBadNames
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.RejectsNonFiniteValuesAndBadNames
+[       OK ] CheckedStore.RejectsNonFiniteValuesAndBadNames (0 ms)
+[----------] 1 test from CheckedStore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated" classname="CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated" time="0.00193465" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CheckedStore
+[ RUN      ] CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated
+[       OK ] CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated (1 ms)
+[----------] 1 test from CheckedStore (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ControllerTable.EveryScenarioMatchesExactly" classname="ControllerTable.EveryScenarioMatchesExactly" time="0.00226212" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ControllerTable.EveryScenarioMatchesExactly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ControllerTable
+[ RUN      ] ControllerTable.EveryScenarioMatchesExactly
+[       OK ] ControllerTable.EveryScenarioMatchesExactly (0 ms)
+[----------] 1 test from ControllerTable (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="LightingController.StartsInFallbackWithLampOff" classname="LightingController.StartsInFallbackWithLampOff" time="0.000837825" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LightingController.StartsInFallbackWithLampOff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LightingController
+[ RUN      ] LightingController.StartsInFallbackWithLampOff
+[       OK ] LightingController.StartsInFallbackWithLampOff (0 ms)
+[----------] 1 test from LightingController (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="LightingController.ExpiresOneMillisecondAfterTheTimeout" classname="LightingController.ExpiresOneMillisecondAfterTheTimeout" time="0.000840877" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LightingController.ExpiresOneMillisecondAfterTheTimeout
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LightingController
+[ RUN      ] LightingController.ExpiresOneMillisecondAfterTheTimeout
+[       OK ] LightingController.ExpiresOneMillisecondAfterTheTimeout (0 ms)
+[----------] 1 test from LightingController (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="LightingController.RepeatedAliveIsReportedAndIgnored" classname="LightingController.RepeatedAliveIsReportedAndIgnored" time="0.000892919" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LightingController.RepeatedAliveIsReportedAndIgnored
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LightingController
+[ RUN      ] LightingController.RepeatedAliveIsReportedAndIgnored
+[       OK ] LightingController.RepeatedAliveIsReportedAndIgnored (0 ms)
+[----------] 1 test from LightingController (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="LightingController.StaleOnCommandDoesNotReturnAfterExpiry" classname="LightingController.StaleOnCommandDoesNotReturnAfterExpiry" time="0.000982625" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LightingController.StaleOnCommandDoesNotReturnAfterExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LightingController
+[ RUN      ] LightingController.StaleOnCommandDoesNotReturnAfterExpiry
+[       OK ] LightingController.StaleOnCommandDoesNotReturnAfterExpiry (0 ms)
+[----------] 1 test from LightingController (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ControllerNode.SendsOnChangeAndOnEveryPeriod" classname="ControllerNode.SendsOnChangeAndOnEveryPeriod" time="0.000864996" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ControllerNode.SendsOnChangeAndOnEveryPeriod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ControllerNode
+[ RUN      ] ControllerNode.SendsOnChangeAndOnEveryPeriod
+[       OK ] ControllerNode.SendsOnChangeAndOnEveryPeriod (0 ms)
+[----------] 1 test from ControllerNode (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="FrameCodec.EncodedFramesDecodeToTheSameValues" classname="FrameCodec.EncodedFramesDecodeToTheSameValues" time="0.000840919" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = FrameCodec.EncodedFramesDecodeToTheSameValues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FrameCodec
+[ RUN      ] FrameCodec.EncodedFramesDecodeToTheSameValues
+[       OK ] FrameCodec.EncodedFramesDecodeToTheSameValues (0 ms)
+[----------] 1 test from FrameCodec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="FrameCodec.RejectsInvalidFramesWithAReason" classname="FrameCodec.RejectsInvalidFramesWithAReason" time="0.000820436" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = FrameCodec.RejectsInvalidFramesWithAReason
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FrameCodec
+[ RUN      ] FrameCodec.RejectsInvalidFramesWithAReason
+[       OK ] FrameCodec.RejectsInvalidFramesWithAReason (0 ms)
+[----------] 1 test from FrameCodec (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.AcceptsAValidReading" classname="TelemetryMessage.AcceptsAValidReading" time="0.00211895" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.AcceptsAValidReading
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.AcceptsAValidReading
+[       OK ] TelemetryMessage.AcceptsAValidReading (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.IntegerValuesAreAccepted" classname="TelemetryMessage.IntegerValuesAreAccepted" time="0.000933383" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.IntegerValuesAreAccepted
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.IntegerValuesAreAccepted
+[       OK ] TelemetryMessage.IntegerValuesAreAccepted (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity" classname="TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity" time="0.000917373" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity
+[       OK ] TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects" classname="TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects" time="0.00114515" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects
+[       OK ] TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.RejectsBadIdentity" classname="TelemetryMessage.RejectsBadIdentity" time="0.00112237" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.RejectsBadIdentity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.RejectsBadIdentity
+[       OK ] TelemetryMessage.RejectsBadIdentity (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt" classname="TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt" time="0.00125425" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt
+[       OK ] TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.RejectsOutOfRangeNumbers" classname="TelemetryMessage.RejectsOutOfRangeNumbers" time="0.0011212" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.RejectsOutOfRangeNumbers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.RejectsOutOfRangeNumbers
+[       OK ] TelemetryMessage.RejectsOutOfRangeNumbers (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="TelemetryMessage.ReceiptsCarryIdentityAndOutcome" classname="TelemetryMessage.ReceiptsCarryIdentityAndOutcome" time="0.00112383" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TelemetryMessage.ReceiptsCarryIdentityAndOutcome
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TelemetryMessage
+[ RUN      ] TelemetryMessage.ReceiptsCarryIdentityAndOutcome
+[       OK ] TelemetryMessage.ReceiptsCarryIdentityAndOutcome (0 ms)
+[----------] 1 test from TelemetryMessage (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="Harness.FailsWhenForced" classname="Harness.FailsWhenForced" time="0.000798699" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Harness.FailsWhenForced
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Harness
+[ RUN      ] Harness.FailsWhenForced
+[       OK ] Harness.FailsWhenForced (0 ms)
+[----------] 1 test from Harness (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+</testsuite>

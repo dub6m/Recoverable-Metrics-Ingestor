@@ -1,0 +1,49 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+-- Checking for module 'libmosquitto'
+--   Found libmosquitto, version 2.0.18
+-- Found nlohmann_json: /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found suitable version "3.11.3", minimum required is "3.11") 
+-- Found GTest: /usr/lib/aarch64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.14.0")  
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/dub6m/Desktop/projects/vehicle-telemetry-lab/build-release
+[1/29] Building CXX object CMakeFiles/metrics_store.dir/src/FileOps.cpp.o
+[2/29] Building CXX object CMakeFiles/metrics_store.dir/src/MemStore.cpp.o
+[3/29] Building CXX object CMakeFiles/lamp_controller.dir/controller/frame_codec.cpp.o
+[4/29] Building CXX object CMakeFiles/lamp_controller.dir/controller/lighting_controller.cpp.o
+[5/29] Building CXX object CMakeFiles/lamp_controller.dir/controller/controller_node.cpp.o
+[6/29] Linking CXX static library liblamp_controller.a
+[7/29] Building CXX object CMakeFiles/metrics_store.dir/src/MetricsStore.cpp.o
+[8/29] Building CXX object CMakeFiles/lighting_controller_can.dir/controller/socketcan_main.cpp.o
+[9/29] Building CXX object CMakeFiles/frame_tool.dir/controller/frame_tool.cpp.o
+[10/29] Building CXX object CMakeFiles/metrics_cli.dir/src/Cli.cpp.o
+[11/29] Building CXX object CMakeFiles/metrics_store.dir/src/Record.cpp.o
+[12/29] Building CXX object CMakeFiles/metrics_store.dir/src/WriteAheadLog.cpp.o
+[13/29] Linking CXX executable frame_tool
+[14/29] Linking CXX executable lighting_controller_can
+[15/29] Linking CXX static library libmetrics_store.a
+[16/29] Linking CXX executable metrics_cli
+[17/29] Building CXX object CMakeFiles/store_tests.dir/tests/MetricsStoreTests.cpp.o
+[18/29] Building CXX object CMakeFiles/harness_tests.dir/tests/harness_tests.cpp.o
+[19/29] Linking CXX executable harness_tests
+[20/29] Building CXX object CMakeFiles/mqtt_collector.dir/collector/mqtt_collector.cpp.o
+[21/29] Building CXX object CMakeFiles/telemetry_message.dir/collector/telemetry_message.cpp.o
+[22/29] Building CXX object CMakeFiles/store_tests.dir/tests/CheckedStoreTests.cpp.o
+[23/29] Linking CXX static library libtelemetry_message.a
+[24/29] Linking CXX executable mqtt_collector
+[25/29] Linking CXX executable store_tests
+[26/29] Building CXX object CMakeFiles/controller_tests.dir/tests/ControllerTests.cpp.o
+[27/29] Linking CXX executable controller_tests
+[28/29] Building CXX object CMakeFiles/collector_tests.dir/tests/CollectorMessageTests.cpp.o
+[29/29] Linking CXX executable collector_tests

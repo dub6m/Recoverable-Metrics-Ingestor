@@ -1,0 +1,26 @@
+[demo] output folder: /tmp/vtlab-demo.uVJGxK
+[demo] commands on: lamp should turn on
+[demo] commands stop: lamp should fall back to off after 300 ms
+[demo] commands resume: lamp should turn on again
+[demo] traffic ended: the lamp falls back once more before the demo stops
+
+[demo] CAN frames captured: 164 (last 3):
+  (1793138531.966921) vtdemo22626 200#1A12
+  (1793138532.074475) vtdemo22626 200#1A12
+  (1793138532.179730) vtdemo22626 200#1A12
+
+Store: 240 readings
+  lamp.fallback        70
+  lamp.on              70
+  vehicle.battery_v    50
+  vehicle.ignition     50
+Lamp changes in the store (lamp.on, in arrival order):
+  +  0.00 s  lamp.on = 0
+  +  0.55 s  lamp.on = 1
+  +  2.69 s  lamp.on = 0
+  +  4.03 s  lamp.on = 1
+  +  5.76 s  lamp.on = 0
+Battery values stored: [12.34]
+Controller trace: 34 commands accepted, 2 timeout(s), 0 frames rejected
+
+[demo] Traces, the CAN capture and the store are in /tmp/vtlab-demo.uVJGxK

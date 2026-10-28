@@ -1,0 +1,11 @@
+2026-10-27T16:21:09: New client connected from 127.0.0.1:60910 as t0-probe (p2, c1, k30).
+2026-10-27T16:21:09: Sending CONNACK to t0-probe (0, 0)
+2026-10-27T16:21:09: Received SUBSCRIBE from t0-probe
+2026-10-27T16:21:09: t0-probe 1 t0/probe
+2026-10-27T16:21:09: Sending SUBACK to t0-probe
+2026-10-27T16:21:10: Received PUBLISH from auto-A694ED7E-19BB-BE57-DE7A-EBEFAE733E89 (d0, q1, r0, m1, 't0/probe', ... (5 bytes))
+2026-10-27T16:21:10: Sending PUBLISH to t0-probe (d0, q1, r0, m1, 't0/probe', ... (5 bytes))
+2026-10-27T16:21:10: Sending PUBACK to auto-A694ED7E-19BB-BE57-DE7A-EBEFAE733E89 (m1, rc0)
+2026-10-27T16:21:10: Received PUBACK from t0-probe (Mid: 1, RC:0)
+2026-10-27T16:21:14: Received DISCONNECT from t0-probe
+2026-10-27T16:21:14: Client t0-probe disconnected.

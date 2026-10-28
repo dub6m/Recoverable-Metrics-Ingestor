@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.7.0 -- /home/dub6m.guest/.venvs/vtlab/bin/python
+rootdir: /Users/dub6m/Desktop/projects/vehicle-telemetry-lab
+configfile: pytest.ini
+testpaths: tests/sil
+collecting ... collected 43 items
+
+tests/sil/test_dbc_layout.py::test_lamp_command_layout_matches_dbc PASSED [  2%]
+tests/sil/test_dbc_layout.py::test_vehicle_state_layout_matches_dbc PASSED [  4%]
+tests/sil/test_dbc_layout.py::test_lamp_state_layout_matches_dbc PASSED  [  6%]
+tests/sil/test_dbc_layout.py::test_frame_lengths_match_dbc PASSED        [  9%]
+tests/sil/test_t1_vcan.py::test_frame_crosses_vcan_and_candump_records_it PASSED [ 11%]
+tests/sil/test_t1b_thin_path.py::test_command_and_battery_reading_reach_the_store PASSED [ 13%]
+tests/sil/test_t2_store_cli.py::test_values_come_back_exactly_in_a_fresh_process PASSED [ 16%]
+tests/sil/test_t2_store_cli.py::test_failed_ingest_exits_nonzero_and_prints_no_ok PASSED [ 18%]
+tests/sil/test_t2_store_cli.py::test_non_finite_value_is_rejected PASSED [ 20%]
+tests/sil/test_t2_store_cli.py::test_original_format_log_is_refused_and_left_unchanged PASSED [ 23%]
+tests/sil/test_t2_store_cli.py::test_corrupt_log_refuses_query PASSED    [ 25%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[startup_without_command_is_fallback_off] PASSED [ 27%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[command_on_turns_lamp_on] PASSED [ 30%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[command_off_turns_lamp_off] PASSED [ 32%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[ignition_off_forces_lamp_off] PASSED [ 34%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[no_vehicle_state_means_ignition_off] PASSED [ 37%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[commands_that_stop_trigger_fallback] PASSED [ 39%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[repeated_alive_counter_does_not_reset_the_timer] PASSED [ 41%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[repeated_alive_counter_with_a_different_request_is_ignored] PASSED [ 44%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[fresh_command_after_fallback_restores_normal_operation] PASSED [ 46%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[stuck_sender_after_fallback_stays_in_fallback] PASSED [ 48%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[invalid_commands_change_nothing_and_do_not_reset_the_timer] PASSED [ 51%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[invalid_vehicle_state_changes_nothing] PASSED [ 53%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[unknown_id_is_ignored] PASSED [ 55%]
+tests/sil/test_t3_controller.py::test_controller_follows_expected_table[commands_keep_the_timer_alive_while_ignition_is_off] PASSED [ 58%]
+tests/sil/test_t3_controller.py::test_timeout_fires_with_no_further_frames_and_is_traced PASSED [ 60%]
+tests/sil/test_t3_controller.py::test_state_frames_repeat_every_100_ms PASSED [ 62%]
+tests/sil/test_t4_pipeline.py::test_lamp_state_and_battery_reach_the_store_unchanged_with_receipts PASSED [ 65%]
+tests/sil/test_t4_pipeline.py::test_invalid_messages_are_rejected_and_never_stored PASSED [ 67%]
+tests/sil/test_t4_pipeline.py::test_retry_of_an_accepted_reading_returns_the_original_result PASSED [ 69%]
+tests/sil/test_t4_pipeline.py::test_conflicting_reading_with_the_same_identity_is_rejected PASSED [ 72%]
+tests/sil/test_t4_pipeline.py::test_crash_after_saving_before_the_receipt_then_retry_keeps_one_copy PASSED [ 74%]
+tests/sil/test_t4_pipeline.py::test_alive_counter_wrap_and_gateway_restart_store_every_distinct_reading PASSED [ 76%]
+tests/sil/test_t5_faults.py::test_healthy_baseline_stores_every_reading PASSED [ 79%]
+tests/sil/test_t5_faults.py::test_broker_restart_queues_readings_then_resumes PASSED [ 81%]
+tests/sil/test_t5_faults.py::test_broker_outage_beyond_the_queue_limit_goes_to_the_drop_log PASSED [ 83%]
+tests/sil/test_t5_faults.py::test_killed_broker_restarts_and_telemetry_resumes PASSED [ 86%]
+tests/sil/test_t5_faults.py::test_killed_collector_restarts_and_receives_what_was_published_meanwhile PASSED [ 88%]
+tests/sil/test_t5_faults.py::test_killed_gateway_restarts_with_a_new_epoch_and_loses_only_unacknowledged_readings PASSED [ 90%]
+tests/sil/test_t5_faults.py::test_reading_with_a_receipt_survives_a_collector_kill PASSED [ 93%]
+tests/sil/test_t5_faults.py::test_crash_before_saving_loses_only_that_message_as_t0_predicts PASSED [ 95%]
+tests/sil/test_t5_faults.py::test_full_disk_gives_failed_receipts_and_never_a_false_stored_receipt PASSED [ 97%]
+tests/sil/test_t5_faults.py::test_commands_stopping_produce_fallback_in_the_store_and_on_the_bus PASSED [100%]
+
+- generated xml file: /Users/dub6m/Desktop/projects/vehicle-telemetry-lab/artifacts/66bc49e/20261027T221425Z/sil-asan.xml -
+======================== 43 passed in 80.59s (0:01:20) =========================

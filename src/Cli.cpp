@@ -4,13 +4,15 @@
 #include <iostream>
 #include <string>
 
+// Exit codes: 0 success, 1 usage or invalid input, 2 storage error.
 namespace
 {
 void PrintUsage()
 {
     std::cout << "Usage:\n"
               << "  metrics_cli <wal_path> ingest <metric> <timestamp> <value>\n"
-              << "  metrics_cli <wal_path> query <metric> <since_timestamp>\n";
+              << "  metrics_cli <wal_path> query <metric> <since_timestamp>\n"
+              << "  metrics_cli <wal_path> dump\n";
 }
 
 bool ParseInt64(const std::string &input, int64_t &value)
@@ -27,39 +29,45 @@ bool ParseInt64(const std::string &input, int64_t &value)
     }
 }
 
-bool ParseDouble(const std::string &input, double &value)
+std::string JsonString(const std::string &token)
 {
-    try
+    // Tokens are restricted to letters, digits and . _ : - so no escaping is needed.
+    return "\"" + token + "\"";
+}
+
+// JSON readers treat "-0" or "12" as integers, losing the sign of zero; always
+// print a floating-point number.
+std::string JsonNumber(double value)
+{
+    std::string text = FormatValue(value);
+    if (text.find_first_of(".e") == std::string::npos)
     {
-        size_t consumed = 0;
-        value = std::stod(input, &consumed);
-        return consumed == input.size();
+        text += ".0";
     }
-    catch (const std::exception &)
-    {
-        return false;
-    }
+    return text;
+}
+
+void PrintReadingJson(const Reading &reading)
+{
+    std::cout << "{\"run_id\":" << (reading.id ? JsonString(reading.id->runId) : "null")
+              << ",\"gateway_epoch\":" << (reading.id ? JsonString(reading.id->epoch) : "null")
+              << ",\"sequence\":" << (reading.id ? std::to_string(reading.id->sequence) : "null")
+              << ",\"signal\":" << JsonString(reading.signal) << ",\"timestamp\":" << reading.timestamp
+              << ",\"value\":" << JsonNumber(reading.value) << "}\n";
 }
 } // namespace
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2)
-    {
-        PrintUsage();
-        return 1;
-    }
-
-    const std::string walPath = argv[1];
     if (argc < 3)
     {
         PrintUsage();
         return 1;
     }
 
+    const std::string walPath = argv[1];
     const std::string command = argv[2];
     MetricsStore store(walPath);
-    store.startupRecover();
 
     if (command == "ingest")
     {
@@ -72,41 +80,69 @@ int main(int argc, char *argv[])
         const std::string metricName = argv[3];
         int64_t timestamp = 0;
         double value = 0.0;
-        if (!ParseInt64(argv[4], timestamp) || !ParseDouble(argv[5], value))
+        if (!ParseInt64(argv[4], timestamp) || !ParseValue(argv[5], value))
         {
             std::cerr << "Invalid timestamp or value.\n";
             return 1;
         }
 
-        store.ingest(metricName, timestamp, value);
+        const StoreResult opened = store.startupRecover();
+        if (!opened.ok)
+        {
+            std::cerr << "error: " << opened.message << "\n";
+            return 2;
+        }
+        const IngestResult result = store.ingest(metricName, timestamp, value);
         store.shutdown();
+        if (result.status == IngestStatus::Invalid)
+        {
+            std::cerr << "Invalid reading: " << result.message << "\n";
+            return 1;
+        }
+        if (!result.accepted())
+        {
+            std::cerr << "error: " << result.message << "\n";
+            return 2;
+        }
         std::cout << "OK\n";
         return 0;
     }
 
-    if (command == "query")
+    if (command == "query" || command == "dump")
     {
-        if (argc != 5)
+        int64_t sinceTimestamp = 0;
+        const bool isQuery = command == "query";
+        if ((isQuery && (argc != 5 || !ParseInt64(argv[4], sinceTimestamp))) || (!isQuery && argc != 3))
         {
             PrintUsage();
             return 1;
         }
 
-        const std::string metricName = argv[3];
-        int64_t sinceTimestamp = 0;
-        if (!ParseInt64(argv[4], sinceTimestamp))
+        // Read-only: safe while another process (the collector) is writing.
+        const StoreResult opened = store.openReadOnly();
+        if (!opened.ok)
         {
-            std::cerr << "Invalid since_timestamp.\n";
-            return 1;
+            std::cerr << "error: " << opened.message << "\n";
+            return 2;
         }
 
-        const auto samples = store.query(metricName, sinceTimestamp);
-        store.shutdown();
-        std::cout << "Samples (most recent first):\n";
-        for (const auto &sample : samples)
+        if (isQuery)
         {
-            std::cout << sample.timestamp << " " << sample.value << "\n";
+            const auto samples = store.query(argv[3], sinceTimestamp);
+            std::cout << "Samples (most recent first):\n";
+            for (const auto &sample : samples)
+            {
+                std::cout << sample.timestamp << " " << FormatValue(sample.value) << "\n";
+            }
         }
+        else
+        {
+            for (const auto &reading : store.readings())
+            {
+                PrintReadingJson(reading);
+            }
+        }
+        store.shutdown();
         return 0;
     }
 

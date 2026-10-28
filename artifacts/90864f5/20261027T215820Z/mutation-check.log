@@ -1,0 +1,16 @@
+# Mutation check 2026-10-27T22:01:02Z, commit 90864f5
+expiry_never_fires: caught (3/3 tests failed):
+    ctest --test-dir build -R ControllerTable
+    /home/dub6m.guest/.venvs/vtlab/bin/python -m pytest -q -p no:cacheprovider tests/sil/test_t3_controller.py -k 'commands_that_stop or timeout_fires'
+    /home/dub6m.guest/.venvs/vtlab/bin/python -m pytest -q -p no:cacheprovider tests/sil/test_t5_faults.py -k commands_stopping
+receipt_sent_before_save: caught (1/2 tests failed):
+    /home/dub6m.guest/.venvs/vtlab/bin/python -m pytest -q -p no:cacheprovider tests/sil/test_t5_faults.py -k full_disk
+repeated_alive_resets_timer: caught (2/2 tests failed):
+    ctest --test-dir build -R ControllerTable
+    /home/dub6m.guest/.venvs/vtlab/bin/python -m pytest -q -p no:cacheprovider tests/sil/test_t3_controller.py -k repeated
+duplicates_not_detected: caught (2/2 tests failed):
+    ctest --test-dir build -R CheckedStore.Duplicates
+    /home/dub6m.guest/.venvs/vtlab/bin/python -m pytest -q -p no:cacheprovider tests/sil/test_t4_pipeline.py -k retry
+incomplete_record_not_cut_off: caught (1/1 tests failed):
+    ctest --test-dir build -R CheckedStore
+All mutations were caught.

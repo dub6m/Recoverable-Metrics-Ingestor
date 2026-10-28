@@ -1,0 +1,3 @@
+before: rc 0 acked 1 got ['before']
+during outage rcs: [<MQTTErrorCode.MQTT_ERR_NO_CONN: 4>, <MQTTErrorCode.MQTT_ERR_NO_CONN: 4>, <MQTTErrorCode.MQTT_ERR_NO_CONN: 4>, <MQTTErrorCode.MQTT_ERR_NO_CONN: 4>, <MQTTErrorCode.MQTT_ERR_NO_CONN: 4>, <MQTTErrorCode.MQTT_ERR_QUEUE_SIZE: 15>, <MQTTErrorCode.MQTT_ERR_QUEUE_SIZE: 15>, <MQTTErrorCode.MQTT_ERR_QUEUE_SIZE: 15>] (0=SUCCESS, 4=NO_CONN, 15=QUEUE_SIZE)
+after restart: acked 6 got ['before']

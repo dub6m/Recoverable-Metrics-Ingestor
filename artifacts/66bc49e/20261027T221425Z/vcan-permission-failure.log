@@ -1,0 +1,12 @@
+E                                                                        [100%]
+==================================== ERRORS ====================================
+_______ ERROR at setup of test_frame_crosses_vcan_and_candump_records_it _______
+could not create vcan interface 'vtl7d5124' (exit 1): sudo: a password is required. The SIL tests need Linux, the vcan kernel module and passwordless sudo for scripts/vcan.sh. See README.md.
+
+During handling of the above exception, another exception occurred:
+could not create vcan interface 'vtl7d5124' (exit 1): sudo: a password is required. The SIL tests need Linux, the vcan kernel module and passwordless sudo for scripts/vcan.sh. See README.md.
+=========================== short test summary info ============================
+ERROR tests/sil/test_t1_vcan.py::test_frame_crosses_vcan_and_candump_records_it
+1 error in 0.01s
+
+OK: the test failed with a clear vcan message and nothing was skipped

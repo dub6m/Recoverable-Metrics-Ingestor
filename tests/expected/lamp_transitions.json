@@ -1,0 +1,188 @@
+{
+  "description": "Expected lamp-controller behaviour, written from docs/protocol.md before and independently of the controller code. tests/ControllerTests.cpp replays every scenario with exact times; tests/sil/test_t3_controller.py replays scenarios marked sil=true against the real controller over vcan. Times are milliseconds from scenario start. SIL checks sit at least 40 ms away from any state change.",
+  "timeout_ms": 300,
+  "scenarios": [
+    {
+      "name": "startup_without_command_is_fallback_off",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 100, "expect": {"lamp_on": false, "fallback": true, "mode": "no_command", "alive_valid": false}}
+      ]
+    },
+    {
+      "name": "command_on_turns_lamp_on",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 20, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 100, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 1, "alive_valid": true}}
+      ]
+    },
+    {
+      "name": "command_off_turns_lamp_off",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 20, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 100, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}},
+        {"at_ms": 150, "command": {"lamp": false, "alive": 2}},
+        {"at_ms": 230, "expect": {"lamp_on": false, "fallback": false, "mode": "normal", "alive": 2}}
+      ]
+    },
+    {
+      "name": "ignition_off_forces_lamp_off",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 20, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 80, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}},
+        {"at_ms": 100, "vehicle": {"ignition": false, "battery_v": 12.5}},
+        {"at_ms": 160, "expect": {"lamp_on": false, "fallback": false, "mode": "normal"}},
+        {"at_ms": 200, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 260, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}}
+      ]
+    },
+    {
+      "name": "no_vehicle_state_means_ignition_off",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 80, "expect": {"lamp_on": false, "fallback": false, "mode": "normal"}}
+      ]
+    },
+    {
+      "name": "commands_that_stop_trigger_fallback",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 100, "command": {"lamp": true, "alive": 2}},
+        {"at_ms": 200, "command": {"lamp": true, "alive": 3}},
+        {"at_ms": 260, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 3}},
+        {"at_ms": 560, "expect": {"lamp_on": false, "fallback": true, "mode": "expired", "alive": 3}}
+      ]
+    },
+    {
+      "name": "timeout_boundary_is_on_time_at_exactly_300_ms",
+      "sil": false,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 300, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}},
+        {"at_ms": 301, "expect": {"lamp_on": false, "fallback": true, "mode": "expired"}}
+      ]
+    },
+    {
+      "name": "command_arriving_exactly_at_the_deadline_is_on_time",
+      "sil": false,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 300, "command": {"lamp": true, "alive": 2}},
+        {"at_ms": 300, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 2}},
+        {"at_ms": 600, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}},
+        {"at_ms": 601, "expect": {"lamp_on": false, "fallback": true, "mode": "expired"}}
+      ]
+    },
+    {
+      "name": "repeated_alive_counter_does_not_reset_the_timer",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 100, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 150, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 5}},
+        {"at_ms": 200, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 300, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 400, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 450, "expect": {"lamp_on": false, "fallback": true, "mode": "expired", "alive": 5}},
+        {"at_ms": 500, "command": {"lamp": true, "alive": 5}}
+      ]
+    },
+    {
+      "name": "repeated_alive_counter_with_a_different_request_is_ignored",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 3}},
+        {"at_ms": 100, "command": {"lamp": false, "alive": 3}},
+        {"at_ms": 160, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 3}}
+      ]
+    },
+    {
+      "name": "fresh_command_after_fallback_restores_normal_operation",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 360, "expect": {"lamp_on": false, "fallback": true, "mode": "expired"}},
+        {"at_ms": 400, "command": {"lamp": true, "alive": 2}},
+        {"at_ms": 460, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 2}}
+      ]
+    },
+    {
+      "name": "stuck_sender_after_fallback_stays_in_fallback",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 360, "expect": {"lamp_on": false, "fallback": true, "mode": "expired"}},
+        {"at_ms": 400, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 460, "expect": {"lamp_on": false, "fallback": true, "mode": "expired", "alive": 1}}
+      ]
+    },
+    {
+      "name": "invalid_commands_change_nothing_and_do_not_reset_the_timer",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 50, "raw": {"id": "0x100", "data": "10", "why": "too short"}},
+        {"at_ms": 60, "raw": {"id": "0x100", "data": "2002", "why": "protocol version 2"}},
+        {"at_ms": 70, "raw": {"id": "0x100", "data": "1202", "why": "reserved bit set in byte 0"}},
+        {"at_ms": 80, "raw": {"id": "0x100", "data": "1022", "why": "reserved bits set in byte 1"}},
+        {"at_ms": 90, "raw": {"id": "0x100", "data": "100200", "why": "too long"}},
+        {"at_ms": 150, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 1}},
+        {"at_ms": 360, "expect": {"lamp_on": false, "fallback": true, "mode": "expired", "alive": 1}}
+      ]
+    },
+    {
+      "name": "invalid_vehicle_state_changes_nothing",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 50, "raw": {"id": "0x110", "data": "100002", "why": "battery 5.12 V is out of range"}},
+        {"at_ms": 60, "raw": {"id": "0x110", "data": "10", "why": "too short"}},
+        {"at_ms": 70, "raw": {"id": "0x110", "data": "20e204", "why": "protocol version 2"}},
+        {"at_ms": 150, "expect": {"lamp_on": true, "fallback": false, "mode": "normal"}}
+      ]
+    },
+    {
+      "name": "unknown_id_is_ignored",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 50, "raw": {"id": "0x101", "data": "1002", "why": "looks like 'lamp off' but on another id"}},
+        {"at_ms": 150, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 1}}
+      ]
+    },
+    {
+      "name": "commands_keep_the_timer_alive_while_ignition_is_off",
+      "sil": true,
+      "steps": [
+        {"at_ms": 0, "vehicle": {"ignition": false, "battery_v": 12.5}},
+        {"at_ms": 0, "command": {"lamp": true, "alive": 1}},
+        {"at_ms": 100, "command": {"lamp": true, "alive": 2}},
+        {"at_ms": 200, "command": {"lamp": true, "alive": 3}},
+        {"at_ms": 300, "command": {"lamp": true, "alive": 4}},
+        {"at_ms": 400, "command": {"lamp": true, "alive": 5}},
+        {"at_ms": 450, "expect": {"lamp_on": false, "fallback": false, "mode": "normal", "alive": 5}},
+        {"at_ms": 460, "vehicle": {"ignition": true, "battery_v": 12.5}},
+        {"at_ms": 520, "expect": {"lamp_on": true, "fallback": false, "mode": "normal", "alive": 5}}
+      ]
+    }
+  ]
+}

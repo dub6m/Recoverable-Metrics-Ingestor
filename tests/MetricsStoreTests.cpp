@@ -1,9 +1,9 @@
 #include "MemStore.h"
 #include "MetricsStore.h"
 
-#include <cassert>
+#include <gtest/gtest.h>
+
 #include <filesystem>
-#include <iostream>
 #include <string>
 
 namespace
@@ -17,7 +17,7 @@ std::filesystem::path MakeTempWalPath()
 }
 } // namespace
 
-void TestWalReplayAndQuery()
+TEST(MetricsStoreOriginal, WalReplayAndQuery)
 {
     const auto walPath = MakeTempWalPath();
 
@@ -34,18 +34,18 @@ void TestWalReplayAndQuery()
     recovered.startupRecover();
 
     const auto cpuSamples = recovered.query("cpu", 0);
-    assert(cpuSamples.size() == 2);
-    assert(cpuSamples[0].timestamp == 200);
-    assert(cpuSamples[1].timestamp == 100);
+    ASSERT_EQ(cpuSamples.size(), 2u);
+    EXPECT_EQ(cpuSamples[0].timestamp, 200);
+    EXPECT_EQ(cpuSamples[1].timestamp, 100);
 
     const auto memSamples = recovered.query("mem", 100);
-    assert(memSamples.size() == 1);
-    assert(memSamples[0].timestamp == 150);
+    ASSERT_EQ(memSamples.size(), 1u);
+    EXPECT_EQ(memSamples[0].timestamp, 150);
 
     recovered.shutdown();
 }
 
-void TestMemStoreEviction()
+TEST(MetricsStoreOriginal, MemStoreEviction)
 {
     MemStore store;
     store.append("latency", 10, 1.0);
@@ -54,14 +54,6 @@ void TestMemStoreEviction()
 
     store.evictOlderThan(25);
     const auto samples = store.query("latency", 0);
-    assert(samples.size() == 1);
-    assert(samples[0].timestamp == 30);
-}
-
-int main()
-{
-    TestWalReplayAndQuery();
-    TestMemStoreEviction();
-    std::cout << "All tests passed.\n";
-    return 0;
+    ASSERT_EQ(samples.size(), 1u);
+    EXPECT_EQ(samples[0].timestamp, 30);
 }

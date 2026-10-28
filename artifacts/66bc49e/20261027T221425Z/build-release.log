@@ -1,0 +1,5 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/dub6m/Desktop/projects/vehicle-telemetry-lab/build-release
+[1/2] Building CXX object CMakeFiles/harness_tests.dir/tests/harness_tests.cpp.o
+[2/2] Linking CXX executable harness_tests

@@ -1,0 +1,4 @@
+cantools==45.1.1
+paho-mqtt==2.1.0
+pytest==9.1.1
+python-can==4.6.1

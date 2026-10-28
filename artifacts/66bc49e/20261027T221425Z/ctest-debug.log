@@ -1,0 +1,84 @@
+Internal ctest changing into directory: /Users/dub6m/Desktop/projects/vehicle-telemetry-lab/build
+Test project /Users/dub6m/Desktop/projects/vehicle-telemetry-lab/build
+      Start  1: MetricsStoreOriginal.WalReplayAndQuery
+ 1/39 Test  #1: MetricsStoreOriginal.WalReplayAndQuery .................................   Passed    0.00 sec
+      Start  2: MetricsStoreOriginal.MemStoreEviction
+ 2/39 Test  #2: MetricsStoreOriginal.MemStoreEviction ..................................   Passed    0.00 sec
+      Start  3: CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart
+ 3/39 Test  #3: CheckedStore.RoundTripsNonIntegerReadingsExactlyAfterRestart ...........   Passed    0.01 sec
+      Start  4: CheckedStore.RecordLineRoundTripsAllFields
+ 4/39 Test  #4: CheckedStore.RecordLineRoundTripsAllFields .............................   Passed    0.00 sec
+      Start  5: CheckedStore.MissingDirectoryAcceptsNothing
+ 5/39 Test  #5: CheckedStore.MissingDirectoryAcceptsNothing ............................   Passed    0.00 sec
+      Start  6: CheckedStore.FullDiskOnWriteAcceptsNothing
+ 6/39 Test  #6: CheckedStore.FullDiskOnWriteAcceptsNothing .............................   Passed    0.00 sec
+      Start  7: CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord
+ 7/39 Test  #7: CheckedStore.ShortWriteThenErrorLeavesNoPartialRecord ..................   Passed    0.00 sec
+      Start  8: CheckedStore.SyncErrorAcceptsNothingAndStopsWrites
+ 8/39 Test  #8: CheckedStore.SyncErrorAcceptsNothingAndStopsWrites .....................   Passed    0.00 sec
+      Start  9: CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord
+ 9/39 Test  #9: CheckedStore.FailedRollbackStopsWritesAndRestartCutsThePartialRecord ...   Passed    0.00 sec
+      Start 10: CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends
+10/39 Test #10: CheckedStore.IncompleteFinalRecordIsCutOffBeforeNewAppends .............   Passed    0.00 sec
+      Start 11: CheckedStore.TwoCrashRestartCyclesInARowStartCleanly
+11/39 Test #11: CheckedStore.TwoCrashRestartCyclesInARowStartCleanly ...................   Passed    0.00 sec
+      Start 12: CheckedStore.InteriorCorruptionRefusesStartup
+12/39 Test #12: CheckedStore.InteriorCorruptionRefusesStartup ..........................   Passed    0.00 sec
+      Start 13: CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete
+13/39 Test #13: CheckedStore.CorruptCompleteFinalLineIsNotTreatedAsIncomplete ..........   Passed    0.00 sec
+      Start 14: CheckedStore.OriginalFormatLogIsRefusedNotMigrated
+14/39 Test #14: CheckedStore.OriginalFormatLogIsRefusedNotMigrated .....................   Passed    0.00 sec
+      Start 15: CheckedStore.UnknownLogVersionIsRefused
+15/39 Test #15: CheckedStore.UnknownLogVersionIsRefused ................................   Passed    0.00 sec
+      Start 16: CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog
+16/39 Test #16: CheckedStore.IncompleteHeaderIsTreatedAsAnEmptyLog .....................   Passed    0.00 sec
+      Start 17: CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone
+17/39 Test #17: CheckedStore.ReadOnlyOpenLeavesAnIncompleteRecordAlone .................   Passed    0.00 sec
+      Start 18: CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts
+18/39 Test #18: CheckedStore.DuplicatesAndConflictsAreDetectedAcrossRestarts ...........   Passed    0.00 sec
+      Start 19: CheckedStore.SecondRecoverCallDoesNotReplayAgain
+19/39 Test #19: CheckedStore.SecondRecoverCallDoesNotReplayAgain .......................   Passed    0.00 sec
+      Start 20: CheckedStore.SecondWriterIsLockedOut
+20/39 Test #20: CheckedStore.SecondWriterIsLockedOut ...................................   Passed    0.00 sec
+      Start 21: CheckedStore.RejectsNonFiniteValuesAndBadNames
+21/39 Test #21: CheckedStore.RejectsNonFiniteValuesAndBadNames .........................   Passed    0.00 sec
+      Start 22: CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated
+22/39 Test #22: CheckedStore.ReadingsWithoutIdentityAreNotDeduplicated .................   Passed    0.00 sec
+      Start 23: ControllerTable.EveryScenarioMatchesExactly
+23/39 Test #23: ControllerTable.EveryScenarioMatchesExactly ............................   Passed    0.00 sec
+      Start 24: LightingController.StartsInFallbackWithLampOff
+24/39 Test #24: LightingController.StartsInFallbackWithLampOff .........................   Passed    0.00 sec
+      Start 25: LightingController.ExpiresOneMillisecondAfterTheTimeout
+25/39 Test #25: LightingController.ExpiresOneMillisecondAfterTheTimeout ................   Passed    0.00 sec
+      Start 26: LightingController.RepeatedAliveIsReportedAndIgnored
+26/39 Test #26: LightingController.RepeatedAliveIsReportedAndIgnored ...................   Passed    0.00 sec
+      Start 27: LightingController.StaleOnCommandDoesNotReturnAfterExpiry
+27/39 Test #27: LightingController.StaleOnCommandDoesNotReturnAfterExpiry ..............   Passed    0.00 sec
+      Start 28: ControllerNode.SendsOnChangeAndOnEveryPeriod
+28/39 Test #28: ControllerNode.SendsOnChangeAndOnEveryPeriod ...........................   Passed    0.00 sec
+      Start 29: FrameCodec.EncodedFramesDecodeToTheSameValues
+29/39 Test #29: FrameCodec.EncodedFramesDecodeToTheSameValues ..........................   Passed    0.00 sec
+      Start 30: FrameCodec.RejectsInvalidFramesWithAReason
+30/39 Test #30: FrameCodec.RejectsInvalidFramesWithAReason .............................   Passed    0.00 sec
+      Start 31: TelemetryMessage.AcceptsAValidReading
+31/39 Test #31: TelemetryMessage.AcceptsAValidReading ..................................   Passed    0.00 sec
+      Start 32: TelemetryMessage.IntegerValuesAreAccepted
+32/39 Test #32: TelemetryMessage.IntegerValuesAreAccepted ..............................   Passed    0.00 sec
+      Start 33: TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity
+33/39 Test #33: TelemetryMessage.RejectsUnexpectedTopicsWithoutIdentity ................   Passed    0.00 sec
+      Start 34: TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects
+34/39 Test #34: TelemetryMessage.RejectsPayloadsThatAreNotJsonObjects ..................   Passed    0.00 sec
+      Start 35: TelemetryMessage.RejectsBadIdentity
+35/39 Test #35: TelemetryMessage.RejectsBadIdentity ....................................   Passed    0.00 sec
+      Start 36: TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt
+36/39 Test #36: TelemetryMessage.RejectsBadFieldsButKeepsIdentityForTheReceipt .........   Passed    0.00 sec
+      Start 37: TelemetryMessage.RejectsOutOfRangeNumbers
+37/39 Test #37: TelemetryMessage.RejectsOutOfRangeNumbers ..............................   Passed    0.00 sec
+      Start 38: TelemetryMessage.ReceiptsCarryIdentityAndOutcome
+38/39 Test #38: TelemetryMessage.ReceiptsCarryIdentityAndOutcome .......................   Passed    0.00 sec
+      Start 39: Harness.FailsWhenForced
+39/39 Test #39: Harness.FailsWhenForced ................................................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 39
+
+Total Test time (real) =   0.10 sec
